@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getRandomUsername = exports.adjectives = exports.animals = void 0;
 /* eslint-disable prettier/prettier */
-exports.animals = [
+export const animals = [
     "albatros",
     "aligator",
     "alpaka",
@@ -84,7 +81,7 @@ exports.animals = [
     "bekas",
     "zebra",
 ];
-exports.adjectives = [
+export const adjectives = [
     "absolutny",
     "uroczy",
     "śmiały",
@@ -218,19 +215,18 @@ exports.adjectives = [
     "wspaniały",
     "żarliwy",
 ];
-var sample = function (arr) {
+const sample = (arr) => {
     return arr[Math.floor(Math.random() * arr.length)];
 };
-var upperFirst = function (str) { return str[0].toUpperCase() + str.slice(1); };
-var getRandomUsername = function () {
-    var randomAnimal = sample(exports.animals);
-    var randomAdjective = sample(exports.adjectives);
+const upperFirst = (str) => str[0].toUpperCase() + str.slice(1);
+export const getRandomUsername = () => {
+    const randomAnimal = sample(animals);
+    const randomAdjective = sample(adjectives);
     // Sprawdź, czy ostatnia litera zwierzęcia to "a"
-    var lastLetterIsA = randomAnimal.charAt(randomAnimal.length - 1).toLowerCase() === "a";
+    const lastLetterIsA = randomAnimal.charAt(randomAnimal.length - 1).toLowerCase() === "a";
     // Jeśli ostatnia litera zwierzęcia to "a", zamień ostatnią literę przymiotnika na "a" za pomocą template literals
-    var modifiedAdjective = lastLetterIsA
-        ? "".concat(randomAdjective.slice(0, -1), "a")
+    const modifiedAdjective = lastLetterIsA
+        ? `${randomAdjective.slice(0, -1)}a`
         : randomAdjective;
-    return "".concat(upperFirst(modifiedAdjective), " ").concat(upperFirst(randomAnimal));
+    return `${upperFirst(modifiedAdjective)} ${upperFirst(randomAnimal)}`;
 };
-exports.getRandomUsername = getRandomUsername;
