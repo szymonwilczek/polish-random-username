@@ -1,9 +1,9 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getRandomUsername = exports.adjectives = exports.animals = void 0;
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /* eslint-disable prettier/prettier */
-exports.animals = [
+const animals = [
     "albatros",
     "aligator",
     "alpaka",
@@ -51,8 +51,6 @@ exports.animals = [
     "gazela",
     "żyrafa",
     "dzięcioł",
-    "złoty bażant",
-    "złota rybka",
     "goryl",
     "konik",
     "sójka",
@@ -85,7 +83,7 @@ exports.animals = [
     "bekas",
     "zebra",
 ];
-exports.adjectives = [
+const adjectives = [
     "absolutny",
     "uroczy",
     "śmiały",
@@ -96,7 +94,6 @@ exports.adjectives = [
     "aktywny",
     "rzeczywisty",
     "biegły",
-    "godny podziwu",
     "podziwiany",
     "nastoletni",
     "uroczy",
@@ -118,7 +115,6 @@ exports.adjectives = [
     "zdolny",
     "arktyczny",
     "artystyczny",
-    "pewny siebie",
     "zdumiewający",
     "sprawny",
     "uważny",
@@ -144,7 +140,6 @@ exports.adjectives = [
     "łaskawy",
     "wielki",
     "zielony",
-    "ręcznie robiony",
     "przystojny",
     "przydatny",
     "szczęśliwy",
@@ -152,7 +147,6 @@ exports.adjectives = [
     "zdrowy",
     "serdeczny",
     "szlachetny",
-    "obdarzony wyobraźnią",
     "porywający",
     "imponujący",
     "niezrównany",
@@ -160,7 +154,6 @@ exports.adjectives = [
     "niechciany",
     "niewinny",
     "radosny",
-    "pełen radości",
     "uradowany",
     "lśniący",
     "wspaniały",
@@ -186,20 +179,16 @@ exports.adjectives = [
     "zdezorientowany",
     "rzeczywisty",
     "rozsądny",
-    "godny zaufania",
     "niezwykły",
     "niepowtarzalny",
-    "pełen wigoru",
     "atłasowy",
     "czebura",
     "sprawiedliwy",
-    "godny zaufania",
     "prawdziwy",
     "prawdziwy",
     "najlepszy",
     "niezwykły",
     "unikalny",
-    "pełen wigoru",
     "atłasowy",
     "czczony",
     "sprawdzalny",
@@ -219,20 +208,23 @@ exports.adjectives = [
     "wspaniały",
     "żarliwy",
 ];
-var sample = function (arr) {
+const sample = (arr) => {
     return arr[Math.floor(Math.random() * arr.length)];
 };
-var upperFirst = function (str) { return str[0].toUpperCase() + str.slice(1); };
-var getRandomUsername = function () {
-    var randomAnimal = sample(exports.animals);
-    var randomAdjective = sample(exports.adjectives);
+const upperFirst = (str) => str[0].toUpperCase() + str.slice(1);
+const getRandomUsername = () => {
+    const randomAnimal = sample(animals);
+    const randomAdjective = sample(adjectives);
     // Sprawdź, czy ostatnia litera zwierzęcia to "a"
-    var lastLetterIsA = randomAnimal.charAt(randomAnimal.length - 1).toLowerCase() === "a";
+    const lastLetterIsA = randomAnimal.charAt(randomAnimal.length - 1).toLowerCase() === "a";
     // Jeśli ostatnia litera zwierzęcia to "a", zamień ostatnią literę przymiotnika na "a" za pomocą template literals
-    var modifiedAdjective = lastLetterIsA
-        ? "".concat(randomAdjective.slice(0, -1), "a")
+    const modifiedAdjective = lastLetterIsA
+        ? `${randomAdjective.slice(0, -1)}a`
         : randomAdjective;
-    return "".concat(upperFirst(modifiedAdjective), " ").concat(upperFirst(randomAnimal));
+    return `${upperFirst(modifiedAdjective)} ${upperFirst(randomAnimal)}`;
 };
+
+exports.adjectives = adjectives;
+exports.animals = animals;
 exports.getRandomUsername = getRandomUsername;
 //# sourceMappingURL=random-username.cjs.development.js.map

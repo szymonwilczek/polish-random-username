@@ -1,5 +1,9 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /* eslint-disable prettier/prettier */
-export const animals = [
+const animals = [
     "albatros",
     "aligator",
     "alpaka",
@@ -47,8 +51,6 @@ export const animals = [
     "gazela",
     "żyrafa",
     "dzięcioł",
-    "złoty bażant",
-    "złota rybka",
     "goryl",
     "konik",
     "sójka",
@@ -81,7 +83,7 @@ export const animals = [
     "bekas",
     "zebra",
 ];
-export const adjectives = [
+const adjectives = [
     "absolutny",
     "uroczy",
     "śmiały",
@@ -92,7 +94,6 @@ export const adjectives = [
     "aktywny",
     "rzeczywisty",
     "biegły",
-    "godny podziwu",
     "podziwiany",
     "nastoletni",
     "uroczy",
@@ -114,7 +115,6 @@ export const adjectives = [
     "zdolny",
     "arktyczny",
     "artystyczny",
-    "pewny siebie",
     "zdumiewający",
     "sprawny",
     "uważny",
@@ -140,7 +140,6 @@ export const adjectives = [
     "łaskawy",
     "wielki",
     "zielony",
-    "ręcznie robiony",
     "przystojny",
     "przydatny",
     "szczęśliwy",
@@ -148,7 +147,6 @@ export const adjectives = [
     "zdrowy",
     "serdeczny",
     "szlachetny",
-    "obdarzony wyobraźnią",
     "porywający",
     "imponujący",
     "niezrównany",
@@ -156,7 +154,6 @@ export const adjectives = [
     "niechciany",
     "niewinny",
     "radosny",
-    "pełen radości",
     "uradowany",
     "lśniący",
     "wspaniały",
@@ -182,20 +179,16 @@ export const adjectives = [
     "zdezorientowany",
     "rzeczywisty",
     "rozsądny",
-    "godny zaufania",
     "niezwykły",
     "niepowtarzalny",
-    "pełen wigoru",
     "atłasowy",
     "czebura",
     "sprawiedliwy",
-    "godny zaufania",
     "prawdziwy",
     "prawdziwy",
     "najlepszy",
     "niezwykły",
     "unikalny",
-    "pełen wigoru",
     "atłasowy",
     "czczony",
     "sprawdzalny",
@@ -219,7 +212,7 @@ const sample = (arr) => {
     return arr[Math.floor(Math.random() * arr.length)];
 };
 const upperFirst = (str) => str[0].toUpperCase() + str.slice(1);
-export const getRandomUsername = () => {
+const getRandomUsername = () => {
     const randomAnimal = sample(animals);
     const randomAdjective = sample(adjectives);
     // Sprawdź, czy ostatnia litera zwierzęcia to "a"
@@ -230,3 +223,7 @@ export const getRandomUsername = () => {
         : randomAdjective;
     return `${upperFirst(modifiedAdjective)} ${upperFirst(randomAnimal)}`;
 };
+
+exports.adjectives = adjectives;
+exports.animals = animals;
+exports.getRandomUsername = getRandomUsername;
