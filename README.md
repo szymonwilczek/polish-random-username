@@ -1,10 +1,7 @@
 [npm]: https://img.shields.io/npm/v/polish-random-username
 [npm-url]: https://www.npmjs.com/package/polish-random-username
-[size]: https://packagephobia.com/badge?p=polish-random-username
-[size-url]: https://packagephobia.com/result?p=polish-random-username
 
 [![npm][npm]][npm-url]
-[![size][size]][size-url]
 
 # polish-random-username
 
@@ -47,4 +44,4 @@ console.log(username); //for example: Szczęśliwy Jaguar
 
 [CONTRIBUTING](/.github/CONTRIBUTING.md)
 
-[LICENSE (MIT)](/LICENSE)
+[LICENSE (MIT)](./LICENSE)
