@@ -40,8 +40,22 @@ const username = getRandomUsername();
 console.log(username); //for example: Szczęśliwy Jaguar
 ```
 
+## Issues
+
+If you enountered an issue, please open new one on [GitHub](https://github.com/szymonwilczek/polish-random-username/issues).
+
+Issues and bugs are appreciated and could be following:
+
+- wrong username generation
+- wrong username validation
+- wrong output
+- wrong gender recognition
+- wrong last letter recognition
+- problems with installing package
+- problems with used dependencies
+
 ## Meta
 
 [CONTRIBUTING](/.github/CONTRIBUTING.md)
 
-[LICENSE (MIT)](./LICENSE)
+[LICENSE (MIT)](https://github.com/szymonwilczek/polish-random-username/blob/main/LICENSE.md)
